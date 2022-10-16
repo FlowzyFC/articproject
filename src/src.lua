@@ -2716,7 +2716,7 @@ function Library:credit(options)
 		Name = "Creditor",
 		Description = nil
 	}, options)
-	options.V3rmillion = options.V3rmillion or options.V3rm
+
 
 	local creditContainer = (self.creditsContainer or self.container):object("Frame", {
 		Theme = {BackgroundColor3 = "Secondary"},
