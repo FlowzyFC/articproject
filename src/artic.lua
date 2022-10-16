@@ -8,7 +8,7 @@ local HTTPService = game:GetService("HttpService")
 
 local Library = {
 	Themes = {
-		Legacy = {
+		Purple = {
 			Main = Color3.fromHSV(262/360, 60/255, 34/255),
 			Secondary = Color3.fromHSV(240/360, 40/255, 63/255),
 			Tertiary = Color3.fromHSV(260/360, 60/255, 148/255),
@@ -53,7 +53,7 @@ local Library = {
 		VisualStudio = {}
 	},
 	ColorPickerStyles = {
-		Legacy = 0,
+		Purple = 0,
 		Modern = 1
 	},
 	Toggled = true,
@@ -95,7 +95,7 @@ end
 function Library:change_theme(toTheme)
 	Library.CurrentTheme = toTheme
 	local c = self:lighten(toTheme.Tertiary, 20)
-	Library.DisplayName.Text = "Welcome To Artic Project <font color='rgb(" ..  math.floor(c.R*255) .. "," .. math.floor(c.G*255) .. "," .. math.floor(c.B*255) .. ")'> <b>" .. LocalPlayer.DisplayName .. "</b> </font>"
+	Library.DisplayName.Text = "Welcome, <font color='rgb(" ..  math.floor(c.R*255) .. "," .. math.floor(c.G*255) .. "," .. math.floor(c.B*255) .. ")'> <b>" .. LocalPlayer.DisplayName .. "</b> </font>"
 	for color, objects in next, Library.ThemeObjects do
 		local themeColor = Library.CurrentTheme[color]
 		for _, obj in next, objects do
@@ -1840,7 +1840,7 @@ function Library:color_picker(options)
 	options = self:set_defaults({
 		Name = "Color Picker",
 		Description = nil,
-		Style = Library.ColorPickerStyles.Legacy,
+		Style = Library.ColorPickerStyles.Purple,
 		Followup = false,
 		Callback = function(color) end
 	}, options)
@@ -2251,7 +2251,7 @@ function Library:color_picker(options)
 				end
 			else
 				do
-					-- legacy
+					-- Purple
 					local holder = darkener:object("Frame", {
 						Centered = true,
 						Theme = {BackgroundColor3 = "Secondary"},
